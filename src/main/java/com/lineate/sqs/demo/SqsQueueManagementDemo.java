@@ -1,4 +1,4 @@
-package com.lineate.sqs;
+package com.lineate.sqs.demo;
 
 import software.amazon.awssdk.auth.credentials.EnvironmentVariableCredentialsProvider;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
@@ -44,9 +44,6 @@ public class SqsQueueManagementDemo {
         List<String> queueUrls = listQueues(sqsClient, queueNamePrefix);
         System.out.println("URLs: ");
         queueUrls.forEach(url -> System.out.println("   " + url));
-
-
-
     }
 
     private static String createQueue(SqsClient sqsClient, String queueName) {
@@ -85,6 +82,4 @@ public class SqsQueueManagementDemo {
         ListQueuesResponse listQueuesResponse = client.listQueues(listQueuesRequest);
         return listQueuesResponse.queueUrls();
     }
-
-
 }
